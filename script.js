@@ -7,6 +7,7 @@ let quotes = [
   `It don't matter if you win by an inch or a mile. Winning's winning.`
 ];
 
+////////// Accessing DOM Elements (Querying) //////////
 
 // Part 1:
 // DOM's personal website title is a bit wordy. Write a JavaScript statement that selects the #main-title ID element. Remember there are a couple of ways to query id. Change the text of the title to something shorter.
@@ -48,4 +49,32 @@ specialTitleEl.forEach( (title) => {
 const liPastRacesEl = document.querySelectorAll("#past-races li")
 liPastRacesEl[3].remove()
 //console.log(liPastRacesEl)
+
+
+
+////////// Creating New DOM Elements //////////
+
+// Part 6:
+// Let's add to DOM's Past Races list. Create a new <li> element, change the new <li> text to the name of a city, and append it to the Past Races list.
+const pastRacesEl = document.querySelector("#past-races")
+let newCity = document.createElement("li")
+newCity.textContent = "Barcelona"
+pastRacesEl.append(newCity)
+console.log(pastRacesEl)
+
+
+
+// Part 7:
+// Create a new .blog-post corresponding to the new city added in Part 6. You will have to create a new <div> with class of .blog-post, a new <h2> with text, and a new <p> with some text. Think about what order you want to create the elements, and what order you want to append them in.
+// Note: The directions say to make new <h2>, but I think they meant new <h1> to match the rest of each blog post.
+
+const divMainEl = document.querySelector("div.main")
+const newDiv = document.createElement("div")
+newDiv.classList.add("blog-post")
+newDiv.classList.add("purple")
+console.log(newDiv)
+newDiv.innerHTML = "<h1>Paris</h1> <p>I RACED AROUND THE EIFFEL TOWER!</p>" 
+divMainEl.append(newDiv)
+
+
 
